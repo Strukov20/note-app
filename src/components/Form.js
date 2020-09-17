@@ -14,14 +14,22 @@ export const Form = () => {
             firebase.addNote(value.trim())
                 .then(() => {
                     alert.show(" Заметка була создана", 'success')
+                    setTimeout(() => {
+                        alert.hide(" Заметка була создана", 'success')
+                    }, 3000)
                 })
                 .catch(() => {
                     alert.show(" Что-то пошло не так!", 'danger')
+                    setTimeout(() => {
+                        alert.hide(" Что-то пошло не так!", 'danger')
+                    }, 3000)
                 })
-            alert.show(" Заметка була создана", 'success')
             setValue('')
         } else {
             alert.show(" Введите название заметки")
+            setTimeout(() => {
+                alert.hide(" Введите название заметки")
+            }, 4000)
         }
 
 
